@@ -15,7 +15,7 @@ class ViewController: UIViewController, CatchProtocol {
     
     var count = Int()
     
-    
+    // ここは最初に呼ばれるところ
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,6 +35,7 @@ class ViewController: UIViewController, CatchProtocol {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        // セグエで画面遷移
         let nextVC = segue.destination as! NextViewController
         nextVC.delegate = self
         
