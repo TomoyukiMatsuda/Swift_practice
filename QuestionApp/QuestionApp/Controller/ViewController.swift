@@ -105,9 +105,10 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "next" {
-            
+            // セグエでVC取得
             let nextVC = segue.destination as! NextViewController
             
+            // 画面遷移
             nextVC.correctedCount = correctCount
             nextVC.wrongCount = wrongCount
         }
