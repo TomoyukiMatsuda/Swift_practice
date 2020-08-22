@@ -1,59 +1,59 @@
-// 構造体とメソッド
-struct Student {
+
+// 構造体と型
+
+struct Human {
     var name: String
     var age: Int
-    var points:[Int]
+}
+var h = Human(name: "Tomoyuki", age: 27)
+print(h)
+print(type(of: h))
+
+var arr = [10, 20, 30, 40]
+print(arr.count)
+
+var ave = 0
+for i in 0 ..< arr.count {
+    ave = ave + arr[i]
+}
+
+ave = ave / arr.count
+print(ave)
+
+struct ClassRoom {
+    var name:String // クラスめい
+    var num:Int // 生徒数
+    var teacher:Human
+    var students:[Human]
     
-    // 平均点計算メソッド
-    func ave() -> Float {
-        var sume = 0
-        for i in 0...2 {
-            sume = sume + points[i]
+    init(name: String, teacher: Human, students: [Human]) {
+        self.name = name
+        self.teacher = teacher
+        self.students = students
+        self.num = students.count
+    }
+    
+    func classStudentsNameAndAge() {
+        for i in 0 ..< self.students.count {
+            print("生徒名：\(self.students[i].name)、　年齢\(self.students[i].age)")
         }
-        
-        return Float(sume) / 3 // float(sum) でsumをfloat型として扱っている
-    }
-    
-    func printInfo() -> Void { // return 返り値がない時はVoid
-        let ave = self.ave()
-        let phrase = "氏名は\(name)です。\n試験の平均点は\(ave)です。"
-        
-        print(phrase)
     }
 }
 
-var s = Student(name: "松田", age: 30, points: [92, 90, 31])
-s.printInfo()
+var t = Human(name: "Tom", age: 40)
+var s1 = Human(name: "Alice", age: 15)
+var s2 = Human(name: "Bob", age: 16)
+var s3 = Human(name: "Charly", age: 17)
 
-// 確認問題
-struct Algebra {
-    var a: Float
-    var b: Float
-    
-    init(a: Float, b: Float) {
-        self.a = a
-        self.b = b
-    }
-    
-    func sum() -> Float {
-        return a + b
-    }
-    
-    func diff() -> Float {
-        return a - b
-    }
-    
-    func times() -> Float {
-        return a * b
-    }
-    
-    func div() -> Float {
-        return a / b
-    }
-}
+var sArr = [s1, s2, s3]
+print(type(of: sArr))
 
-let al = Algebra(a: 2.5, b: 2.0)
-print(al.a, al.b)
-print(al.sum(), al.diff(), al.times(), al.div())
+var cr = ClassRoom(name: "3-A", teacher: t, students: sArr)
+print(type(of: cr))
 
+print(cr.teacher.name)
+print(cr.students[1].name)
 
+print(cr.num)
+
+cr.classStudentsNameAndAge()
