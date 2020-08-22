@@ -1,39 +1,59 @@
-
-struct Box {
-    var width: Float
-    var length: Float
-    var height: Float
-    var volume: Float
+// 構造体とメソッド
+struct Student {
+    var name: String
+    var age: Int
+    var points:[Int]
     
-    init(w: Float, l: Float, h: Float) {
-        self.width = w
-        self.length = l
-        self.height = h
-        self.volume = w * l * h
+    // 平均点計算メソッド
+    func ave() -> Float {
+        var sume = 0
+        for i in 0...2 {
+            sume = sume + points[i]
+        }
+        
+        return Float(sume) / 3 // float(sum) でsumをfloat型として扱っている
+    }
+    
+    func printInfo() -> Void { // return 返り値がない時はVoid
+        let ave = self.ave()
+        let phrase = "氏名は\(name)です。\n試験の平均点は\(ave)です。"
+        
+        print(phrase)
     }
 }
 
-var b = Box(w: 2, l: 4, h: 2)
-print(b.volume)
+var s = Student(name: "松田", age: 30, points: [92, 90, 31])
+s.printInfo()
 
-struct Cube {
-    var l: Float
-}
-var c = Cube.init(l: 9.0)
-print(c.l)
-
-struct Sphere {
-    var radius: Float
-    var volume: Float
-    var surface: Float
+// 確認問題
+struct Algebra {
+    var a: Float
+    var b: Float
     
-    init(r: Float) {
-        self.radius = r
-        self.volume = 4 / 3 * 3.141592 * r * r * r
-        self.surface = 4 * 3.141592 * r * r
+    init(a: Float, b: Float) {
+        self.a = a
+        self.b = b
+    }
+    
+    func sum() -> Float {
+        return a + b
+    }
+    
+    func diff() -> Float {
+        return a - b
+    }
+    
+    func times() -> Float {
+        return a * b
+    }
+    
+    func div() -> Float {
+        return a / b
     }
 }
 
-var s = Sphere(r: 5)
+let al = Algebra(a: 2.5, b: 2.0)
+print(al.a, al.b)
+print(al.sum(), al.diff(), al.times(), al.div())
 
-print(s.radius, s.volume, s.surface)
+
