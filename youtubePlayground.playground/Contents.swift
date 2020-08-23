@@ -47,10 +47,11 @@ var mb = arr[0].getSurface() / arr[0].getVolume()
 var num = 0
 
 for i in 1 ..< arr.count {
-    var b = arr[i].getSurface() / arr[i].getVolume()
+    let b = arr[i].getSurface() / arr[i].getVolume()
     if mb < b {
         num = i
     }
 }
 
+print("######最終結果################")
 print("\(arr[num].r)です")
