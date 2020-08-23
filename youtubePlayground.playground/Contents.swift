@@ -1,20 +1,14 @@
-import Foundation
+// 三項演算子
 
-print(sqrt(2))
-print(sqrt(4))
-pow(3, 2)
+var a = 100
+var b = 100
 
-Int.min
-Int.max
+var winner = "勝者は"
 
-UInt8.max
+winner += a > b ? "Aさんです" : "Bさんです"
 
-var x: Double = pow(10, 308)
-x.isInfinite
-    
-if x.isInfinite {
-    print("x は無限大")
-} else {
-    print("無限大でない")
-}
+print(winner)
 
+winner = a > b ? "勝者はAさんです" : a < b ? "勝者はBさんです" : "引き分けです"
+
+print(winner)
