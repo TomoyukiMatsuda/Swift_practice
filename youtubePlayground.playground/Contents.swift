@@ -1,8 +1,16 @@
-func divide(value: Double, m: Double, n: Double) -> (m: Double, n: Double) {
+// クロージャーの学習
+
+let draemon = { (Person: String) in
     
-    let mValue = value * m / (m + n)
-    let nValue = value * n / (m + n)
-    return (m: mValue, n: nValue)
+    print("ドラえもんと \(Person)")
+}
+ 
+draemon("のびた")
+
+
+let human = { (Hito: String) -> String in
+    
+    return "私は \(Hito)です"
 }
 
-print(divide(value: 10, m: 2, n: 3))
+print(human("人"))
