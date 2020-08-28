@@ -1,16 +1,28 @@
-// クロージャーの学習
+// クロージャーの学習、@escaping属性
 
-let draemon = { (Person: String) in
-    
-    print("ドラえもんと \(Person)")
-}
- 
-draemon("のびた")
+var queue = [() -> Void]()
 
-
-let human = { (Hito: String) -> String in
-    
-    return "私は \(Hito)です"
+func enqueue(operation: @escaping () -> Void) {
+    queue.append(operation)
 }
 
-print(human("人"))
+enqueue {
+    print("executed")
+}
+enqueue {
+    print("executed")
+}
+
+queue.forEach { $0() }
+print(queue)
+
+
+func executeTwice(operation: () -> Void) {
+    operation()
+    operation()
+}
+
+executeTwice {
+    print("実行実行")
+    print("実行")
+}
