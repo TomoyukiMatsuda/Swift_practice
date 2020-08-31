@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		7A2AB6CB24E923D400DD1188 /* ImagesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2AB6CA24E923D400DD1188 /* ImagesModel.swift */; };
 		7A2AB6CD24E9ED0200DD1188 /* imagesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2AB6CC24E9ED0200DD1188 /* imagesList.swift */; };
+		7A2CA26A24FC6D5900E17890 /* SoundFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2CA26924FC6D5900E17890 /* SoundFile.swift */; };
+		7A2CA26C24FC72B100E17890 /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2CA26B24FC72B100E17890 /* Animal.swift */; };
+		7A2CA26E24FC72F700E17890 /* Human.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2CA26D24FC72F700E17890 /* Human.swift */; };
+		7A2CA27024FC7AEC00E17890 /* WithOutMP3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2CA26F24FC7AEC00E17890 /* WithOutMP3.swift */; };
+		7A2CA27224FC811500E17890 /* ChangeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2CA27124FC811500E17890 /* ChangeColor.swift */; };
 		7AFC609324E9184100F9D999 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFC609224E9184100F9D999 /* AppDelegate.swift */; };
 		7AFC609524E9184100F9D999 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFC609424E9184100F9D999 /* SceneDelegate.swift */; };
 		7AFC609724E9184100F9D999 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFC609624E9184100F9D999 /* ViewController.swift */; };
@@ -24,6 +29,11 @@
 /* Begin PBXFileReference section */
 		7A2AB6CA24E923D400DD1188 /* ImagesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesModel.swift; sourceTree = "<group>"; };
 		7A2AB6CC24E9ED0200DD1188 /* imagesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imagesList.swift; sourceTree = "<group>"; };
+		7A2CA26924FC6D5900E17890 /* SoundFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundFile.swift; sourceTree = "<group>"; };
+		7A2CA26B24FC72B100E17890 /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
+		7A2CA26D24FC72F700E17890 /* Human.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Human.swift; sourceTree = "<group>"; };
+		7A2CA26F24FC7AEC00E17890 /* WithOutMP3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithOutMP3.swift; sourceTree = "<group>"; };
+		7A2CA27124FC811500E17890 /* ChangeColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeColor.swift; sourceTree = "<group>"; };
 		7AFC608F24E9184100F9D999 /* QuestionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuestionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AFC609224E9184100F9D999 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AFC609424E9184100F9D999 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +95,11 @@
 			children = (
 				7A2AB6CA24E923D400DD1188 /* ImagesModel.swift */,
 				7A2AB6CC24E9ED0200DD1188 /* imagesList.swift */,
+				7A2CA26924FC6D5900E17890 /* SoundFile.swift */,
+				7A2CA26B24FC72B100E17890 /* Animal.swift */,
+				7A2CA26D24FC72F700E17890 /* Human.swift */,
+				7A2CA26F24FC7AEC00E17890 /* WithOutMP3.swift */,
+				7A2CA27124FC811500E17890 /* ChangeColor.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -184,9 +199,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AFC609724E9184100F9D999 /* ViewController.swift in Sources */,
+				7A2CA27224FC811500E17890 /* ChangeColor.swift in Sources */,
+				7A2CA26C24FC72B100E17890 /* Animal.swift in Sources */,
+				7A2CA26A24FC6D5900E17890 /* SoundFile.swift in Sources */,
 				7AFC60B024E91C1C00F9D999 /* NextViewController.swift in Sources */,
+				7A2CA26E24FC72F700E17890 /* Human.swift in Sources */,
 				7AFC609324E9184100F9D999 /* AppDelegate.swift in Sources */,
 				7AFC609524E9184100F9D999 /* SceneDelegate.swift in Sources */,
+				7A2CA27024FC7AEC00E17890 /* WithOutMP3.swift in Sources */,
 				7A2AB6CB24E923D400DD1188 /* ImagesModel.swift in Sources */,
 				7A2AB6CD24E9ED0200DD1188 /* imagesList.swift in Sources */,
 			);

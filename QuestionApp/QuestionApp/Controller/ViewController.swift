@@ -8,8 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, NowScoreDelegate {
     
     @IBOutlet weak var imageView: UIImageView!
     
@@ -25,9 +24,27 @@ class ViewController: UIViewController {
     //IBActionで検知した正答がどちらなのかを取得する変数
     var pickedAnswer = false
     
+    // withOutMP3をインスタンス化
+//    var withOutMP3 = WithOutMP3()
+    
+    // soundFileをインスタンス化
+    var soundFile = SoundFile()
+    
+    var changeColor = ChangeColor()
+    
+    var gradientLayer = CAGradientLayer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        gradientLayer = changeColor.changeColor(topR: 0.07, topG: 0.13, topB: 0.26, topAlpha: 1.0, bottomR: 0.54, bottomG: 0.74, bottomB: 0.74, bottomAlpha: 1.0)
+        
+        gradientLayer.frame = view.bounds // boundsで画面全体ということになる
+        
+        view.layer.insertSublayer(gradientLayer, at: 0)
+        
+        // 画像の角を丸くする
+        imageView.layer.cornerRadius = 20.0
     }
     
     
@@ -40,6 +57,14 @@ class ViewController: UIViewController {
         
         //最初に表示する画像
         imageView.image = UIImage(named: imagesList.list[0].imageText)
+        
+        // NextViewControllerに入れたbeforeCountから値を取り出してmaxいれる(値があれば）
+        if UserDefaults.standard.object(forKey: "beforeCount") != nil {
+            
+            maxScore = UserDefaults.standard.object(forKey: "beforeCount") as! Int
+        }
+        // 最高得点を表示
+        maxScoreLabel.text = String(maxScore)
     }
 
     @IBAction func answer(_ sender: Any) {
@@ -49,7 +74,7 @@ class ViewController: UIViewController {
             
             pickedAnswer = true
             //丸ボタンが押された時
-            
+            soundFile.playSound(fileName: "maruSound", extensionName: "mp3")
             //ユーザが押したボタンがまるボタンだった
             
             //丸ボタンの音声を流す
@@ -60,7 +85,7 @@ class ViewController: UIViewController {
             pickedAnswer = false
             
             //ばつボタンが押された時
-            
+            soundFile.playSound(fileName: "batsuSound", extensionName: "mp3")
             //ユーザが押したボタンがばつボタンだった
             
             //ばつボタンの音声を流す
@@ -102,6 +127,14 @@ class ViewController: UIViewController {
         }
     }
     
+    func nowSore(score: Int) {
+        
+        // 最高得点を更新していれば効果音がなる
+        soundFile.playSound(fileName: "sound", extensionName: "mp3")
+        // 更新した最高得点を表示する
+        maxScoreLabel.text = String(score)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "next" {
@@ -111,6 +144,7 @@ class ViewController: UIViewController {
             // 画面遷移
             nextVC.correctedCount = correctCount
             nextVC.wrongCount = wrongCount
+            nextVC.delegate = self
         }
     }
     
